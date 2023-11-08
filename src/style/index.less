@@ -1,0 +1,71 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+@bg-color:#b7d4a8;
+
+body{
+    display: flex;
+    justify-content: center;
+    font: bold 20px "Courier";
+}
+
+#main{
+    width: 360px;
+    height: 420px;
+    top: 50px;
+    background-color:@bg-color;
+    border: 10px solid #000000;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+
+    #moveArea{
+        position: absolute;
+        top: 20px;
+        margin: 0 auto;
+        border: 2px solid #000000;
+        width: 304px;
+        height: 304px;
+
+        // 设置蛇样式
+        #snack{
+            &>div{
+                position: absolute;
+                width: 10px;
+                height: 10px;
+                background-color: #000000;
+                border: 1px solid @bg-color;
+            }
+        }
+        // 设置食物样式
+        #food{
+            position: absolute;
+            display: flex;
+            width: 10px;
+            height: 10px;
+            flex-flow:row wrap;
+            justify-content: space-between;
+            align-content: space-between;
+            left: 50px;
+            top: 100px;
+            &>div{
+                width: 4px;
+                height: 4px;
+                background-color: #000000;
+                transform: rotate(45deg);
+            }
+        }
+    }
+    #textArea{
+        position: absolute;
+        bottom: 20px;
+        width: 304px;
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+
